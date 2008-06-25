@@ -58,12 +58,12 @@ module Smug
             method.gsub!(/_/, ".")
             if args
                 if args[0]
-                    args[0]["Session"] = @session
+                    args[0]["SessionID"] = @session
                 else
-                    args = [{ :Session => @session }]
+                    args = [{ :SessionID => @session }]
                 end
             else
-                args = [{ :Session => @session }]
+                args = [{ :SessionID => @session }]
             end
             data = call_json(method, *args)
         end
